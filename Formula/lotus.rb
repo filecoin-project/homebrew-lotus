@@ -14,10 +14,9 @@ class Lotus < Formula
 
   def install
     system "git init"
-    system "git clone https://github.com/filecoin-project/filecoin-ffi.git extern/filecoin-ffi"
     system "go mod tidy"
     system "go mod download"
-    system "make all"
+    system "CGO_ENABLED=1 FFI_BUILD_FROM_SOURCE=1 make all"
     bin.install "lotus"
     bin.install "lotus-miner"
     bin.install "lotus-worker"

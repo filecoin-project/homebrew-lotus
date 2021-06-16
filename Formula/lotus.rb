@@ -10,17 +10,34 @@ class Lotus < Formula
   depends_on "go"         => :build
   depends_on "jq"         => :build
   depends_on "rustup"     => :build
-  depends_on "hwloc"      => :build
+  depends_on "hwloc"
 
   def install
-    system "git init"
+    ENV["CARGO_HOME"] = File.join(prefix ,"_CARGO")
+    ENV["RUSTUP_HOME"] = File.join(prefix, "_RUSTUP")
+    ENV["CGO_ENABLED"] = "1"
+    ENV["FFI_BUILD_FROM_SOURCE"] = "1"
+
+    # update submodules
     system "git clone https://github.com/filecoin-project/filecoin-ffi.git extern/filecoin-ffi"
+    system "git clone https://github.com/filecoin-project/serialization-vectors.git extern/serialization-vectors"
+    system "git clone https://github.com/filecoin-project/test-vectors.git extern/test-vectors"
+    system "touch build/.update-modules"
+
+    # rustup
+    system "mkdir " + ENV["RUSTUP_HOME"] + " " + ENV["CARGO_HOME"]
+    system "rustup-init --no-modify-path -y"
+    ENV.prepend_path("PATH", ENV["CARGO_HOME"] + "/bin")
+
+    # make
     system "go mod tidy"
     system "go mod download"
-    system "CGO_ENABLED=1 FFI_BUILD_FROM_SOURCE=1 make all"
+    system "make all"
     bin.install "lotus"
     bin.install "lotus-miner"
     bin.install "lotus-worker"
+
+    # cleanup
+    system "rm -rf " + ENV["RUSTUP_HOME"] + " " + ENV["CARGO_HOME"]
   end
 end
-

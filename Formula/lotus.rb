@@ -15,8 +15,6 @@ class Lotus < Formula
   def install
     ENV["CARGO_HOME"] = File.join(prefix ,"_CARGO")
     ENV["RUSTUP_HOME"] = File.join(prefix, "_RUSTUP")
-    ENV["CGO_ENABLED"] = "1"
-    ENV["FFI_BUILD_FROM_SOURCE"] = "1"
 
     # update submodules
     system "git clone https://github.com/filecoin-project/filecoin-ffi.git extern/filecoin-ffi"
@@ -30,8 +28,6 @@ class Lotus < Formula
     ENV.prepend_path("PATH", ENV["CARGO_HOME"] + "/bin")
 
     # make
-    system "go mod tidy"
-    system "go mod download"
     system "make all"
     bin.install "lotus"
     bin.install "lotus-miner"

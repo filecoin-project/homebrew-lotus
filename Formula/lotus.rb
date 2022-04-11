@@ -1,8 +1,9 @@
 class Lotus < Formula
   desc "lotus filecoin daemon and client"
   homepage "filecoin.io"
-  url "https://github.com/filecoin-project/lotus/archive/refs/tags/v1.14.1.tar.gz"
-  sha256 "16fa6d1450683a70561f2a0ca73ac48b39dcdbaee04332136b2813844306be35"
+  url "https://github.com/filecoin-project/lotus/archive/refs/tags/v1.15.0.tar.gz"
+  url "https://github.com/filecoin-project/lotus/archive/refs/tags/v1.15.1.tar.gz"
+  sha256 "09ccc397ca74f758b1526a9cbcdf521227b1dabfc75b2e5688dd5d43fe645dab"
   license "Apache-2.0/MIT"
   head "https://github.com/filecoin-project/lotus"
 

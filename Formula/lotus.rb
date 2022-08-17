@@ -5,13 +5,13 @@
 class Lotus < Formula
   desc "A homebrew cask for installing filecoin-project/lotus on MacOS"
   homepage "https://filecoin.io"
-  version "1.17.1-rc2"
+  version "1.17.1-rc3"
   license "MIT"
   depends_on :macos
 
   on_macos do
-    url "https://github.com/filecoin-project/lotus/releases/download/v1.17.1-rc2/lotus_1.17.1-rc2_darwin_all.tar.gz"
-    sha256 "78851bb3b7050441f6913a2ec0ce27c46998e33012be3609dad568fb2499685a"
+    url "https://github.com/filecoin-project/lotus/releases/download/v1.17.1-rc3/lotus_1.17.1-rc3_darwin_all.tar.gz"
+    sha256 "2c9ab9a6b04d8bca9bafcc65b1b99019ccee0ba81076aeccf5493ee082db327b"
 
     def install
       bin.install "lotus"

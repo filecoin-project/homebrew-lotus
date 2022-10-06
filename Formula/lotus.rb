@@ -16,7 +16,7 @@ class Lotus < Formula
 
   on_macos do
     url "https://github.com/filecoin-project/lotus/releases/download/v1.17.2/lotus_1.17.2_darwin_all.tar.gz"
-    sha256 "61d0d64d343ec55f2418cd72ecb4de3b072b50ff506f019641c09fd3e4dc4436"
+    sha256 "cc1586e16eade6ae1f5645a4cfa28c35e7e59ec7e18f04c74e76ac07f8c66a5d"
 
     def install
       bin.install "lotus"

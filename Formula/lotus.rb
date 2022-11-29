@@ -8,9 +8,6 @@ class Lotus < Formula
   version "1.18.1"
   license "MIT"
 
-  depends_on "pkg-config"
-  depends_on "jq"
-  depends_on "bzr"
   depends_on "hwloc"
   depends_on :macos
 

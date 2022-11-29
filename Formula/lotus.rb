@@ -12,8 +12,8 @@ class Lotus < Formula
   depends_on :macos
 
   on_macos do
-    url "https://github.com/filecoin-project/lotus/releases/download/v1.18.1/lotus_1.18.1_darwin_all.tar.gz"
-    sha256 "15c204671506615576d690de5e917d29171a2afcdd4d1791151c94be4428e02c"
+    url "https://github.com/filecoin-project/lotus/releases/download/v1.18.1/lotus_v1.18.1_darwin_all.tar.gz"
+    sha256 "2029f2cf0e0bebb53ddfb053e6000695e1f0f38440cbd09e7c0b279fd6a709cd"
 
     def install
       bin.install "lotus"

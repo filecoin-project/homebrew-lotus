@@ -5,14 +5,14 @@
 class Lotus < Formula
   desc "A homebrew cask for installing filecoin-project/lotus on MacOS"
   homepage "https://filecoin.io"
-  version "1.22.1"
+  version "1.23.1"
   license "MIT"
 
   depends_on "hwloc"
 
   on_macos do
-    url "https://github.com/filecoin-project/lotus/releases/download/v1.22.1/lotus_v1.22.1_darwin_all.tar.gz"
-    sha256 "8e985f668f3f02fa3610690fd34b904ffdc5f29420b215c16bc4607c1646a7e6"
+    url "https://github.com/filecoin-project/lotus/releases/download/v1.23.1/lotus_v1.23.1_darwin_all.tar.gz"
+    sha256 "400f429934ac2e2200f5404562cb9a0326c32c1c195742627b520e24849d3897"
 
     def install
       bin.install "lotus"
@@ -23,8 +23,8 @@ class Lotus < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/filecoin-project/lotus/releases/download/v1.22.1/lotus_v1.22.1_linux_amd64.tar.gz"
-      sha256 "0ea5371a6b814137083417e78a8f35979d5dffcc144d9fa59a1785c1fb4853d1"
+      url "https://github.com/filecoin-project/lotus/releases/download/v1.23.1/lotus_v1.23.1_linux_amd64.tar.gz"
+      sha256 "bc256cbfd3fb894a15a53e1888a66ccbd6c57e1c3c49d4529b75118ee87c8b06"
 
       def install
         bin.install "lotus"

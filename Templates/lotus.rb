@@ -1,4 +1,4 @@
-This file was generated - DO NOT EDIT
+${HEADER}
 class Lotus < Formula
   desc "A homebrew cask for installing the Lotus project from filecoin-project/lotus"
   homepage "https://filecoin.io"

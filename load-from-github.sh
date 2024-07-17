@@ -4,7 +4,7 @@ set -o pipefail
 set -o nounset
 set -o errexit
 
-REPO="filecoin-project/lotus"
+REPO="galargh/lotus"
 RELEASES=$(curl -s "https://api.github.com/repos/${REPO}/releases")
 get_latest_release() {
     local TAG_PREFIX=$1

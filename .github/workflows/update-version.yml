@@ -1,0 +1,45 @@
+name: Bump Lotus Version
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  bump-version:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Generate formulas
+        id: generate_formulas
+        run: |
+            OUTPUT=$(./load-from-github.sh)
+            echo "output=${OUTPUT}" >> $GITHUB_OUTPUT
+
+      - name: Check if changes exist
+        id: git_diff
+        run: |
+          git diff --exit-code || echo "has_changes=true" >> $GITHUB_OUTPUT
+
+      - name: Create Pull Request
+        if: steps.git_diff.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6.1.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: update-formulas
+          title: "Update Formulas with Latest Versions"
+          body: "This PR updates the Lotus formulas\n${{ steps.generate_formulas.outputs.output }}"
+          commit-message: "${{ steps.generate_formulas.outputs.output }}."
+          committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          add-paths: |
+            Formula/*.rb

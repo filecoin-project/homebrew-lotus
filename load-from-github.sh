@@ -60,7 +60,7 @@ export MINER_MACOS_SHA=$miner_macos_sha
 export MINER_LINUX_INTEL_URL=$miner_linux_intel_url
 export MINER_LINUX_INTEL_SHA=$miner_linux_intel_sha
 
-export HEADER="This file was generated - DO NOT EDIT"
+export HEADER="# This file was generated - DO NOT EDIT"
 mkdir -p Formula
 
 envsubst < Templates/lotus-node.rb > Formula/lotus-node.rb

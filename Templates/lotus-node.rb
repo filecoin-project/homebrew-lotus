@@ -9,7 +9,7 @@ class LotusNode < Formula
 
   on_macos do
     url "${NODE_MACOS_URL}"
-    sha512 "${NODE_MACOS_SHA}"
+    sha256 "${NODE_MACOS_SHA}"
 
     def install
       bin.install "lotus"
@@ -20,7 +20,7 @@ class LotusNode < Formula
     on_intel do
       if Hardware::CPU.is_64_bit?
         url "${NODE_LINUX_INTEL_URL}"
-        sha512 "${NODE_LINUX_INTEL_SHA}"
+        sha256 "${NODE_LINUX_INTEL_SHA}"
 
         def install
           bin.install "lotus"

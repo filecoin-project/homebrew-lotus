@@ -9,7 +9,7 @@ class LotusNode < Formula
 
   on_macos do
     url "https://github.com/galargh/lotus/releases/download/v1.27.1/lotus_v1.27.1_darwin_all.tar.gz"
-    sha512 "some"
+    sha256 "some"
 
     def install
       bin.install "lotus"
@@ -20,7 +20,7 @@ class LotusNode < Formula
     on_intel do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/galargh/lotus/releases/download/v1.27.1/lotus_v1.27.1_linux_amd64_v1.tar.gz"
-        sha512 "some"
+        sha256 "some"
 
         def install
           bin.install "lotus"

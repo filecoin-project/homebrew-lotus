@@ -9,7 +9,7 @@ class LotusMiner < Formula
 
   on_macos do
     url "${MINER_MACOS_URL}"
-    sha512 "${MINER_MACOS_SHA}"
+    sha256 "${MINER_MACOS_SHA}"
 
     def install
       bin.install "lotus-miner"
@@ -21,7 +21,7 @@ class LotusMiner < Formula
     on_intel do
       if Hardware::CPU.is_64_bit?
         url "${MINER_LINUX_INTEL_URL}"
-        sha512 "${MINER_LINUX_INTEL_SHA}"
+        sha256 "${MINER_LINUX_INTEL_SHA}"
 
         def install
           bin.install "lotus-miner"

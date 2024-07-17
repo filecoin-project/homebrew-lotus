@@ -1,4 +1,4 @@
-This file was generated - DO NOT EDIT
+# This file was generated - DO NOT EDIT
 class LotusMiner < Formula
   desc "A homebrew cask for installing the Lotus miner from filecoin-project/lotus"
   homepage "https://filecoin.io"

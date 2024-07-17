@@ -83,7 +83,6 @@ export MINER_LINUX_INTEL_SHA=$miner_linux_intel_sha256
 export HEADER="# This file was generated - DO NOT EDIT"
 mkdir -p Formula
 
-envsubst < Templates/lotus-node.rb > Formula/lotus-node.rb
 envsubst < Templates/lotus-miner.rb > Formula/lotus-miner.rb
 envsubst < Templates/lotus.rb > Formula/lotus.rb
 

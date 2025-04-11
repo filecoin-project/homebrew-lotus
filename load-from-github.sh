@@ -15,6 +15,7 @@ get_latest_release() {
         exit 1
     fi
 
+    # https://github.com/filecoin-project/lotus/blob/master/LOTUS_RELEASE_FLOW.md#why-is-the-releases-branch-deprecated-and-what-are-alternatives
     local LATEST_RELEASE=$(echo "$RELEASES_TAGS_WITH_PREFIX" | sort -V | tail -n 1)
     if [ -z "$LATEST_RELEASE" ]; then
         exit 1
@@ -47,7 +48,7 @@ node_linux_intel_sha=$(curl -sL $node_linux_intel_sha_url | awk '{print $1}')
 miner_macos_sha=$(curl -sL $miner_macos_sha_url | awk '{print $1}')
 miner_linux_intel_sha=$(curl -sL $miner_linux_intel_sha_url | awk '{print $1}')
 
-# Homebrew support sha256 only.
+# Homebrew supports sha256 only.
 # So download the files in /tmp/ check their sha512 (for safety) then compute their sha256
 get_release_sha256() {
     local URL=$1

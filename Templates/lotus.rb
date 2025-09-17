@@ -8,11 +8,13 @@ class Lotus < Formula
   depends_on "hwloc"
 
   on_macos do
-    url "${NODE_MACOS_URL}"
-    sha256 "${NODE_MACOS_SHA}"
+    on_arm do
+      url "${NODE_MACOS_URL}"
+      sha256 "${NODE_MACOS_SHA}"
 
-    def install
-      bin.install "lotus"
+      def install
+        bin.install "lotus"
+      end
     end
   end
 

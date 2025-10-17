@@ -8,14 +8,12 @@ class LotusMiner < Formula
   depends_on "hwloc"
 
   on_macos do
-    on_arm do
-      url "${MINER_MACOS_URL}"
-      sha256 "${MINER_MACOS_SHA}"
+    url "${MINER_MACOS_URL}"
+    sha256 "${MINER_MACOS_SHA}"
 
-      def install
-        bin.install "lotus-miner"
-        bin.install "lotus-worker"
-      end
+    def install
+      bin.install "lotus-miner"
+      bin.install "lotus-worker"
     end
   end
 

@@ -31,14 +31,14 @@ miner_tag=$(get_latest_release "miner/v")
 miner_version=${miner_tag#"miner/v"}
 
 # Node URLS
-node_macos_url="https://github.com/${REPO}/releases/download/${node_tag}/lotus_${node_tag}_darwin_arm64.tar.gz"
-node_macos_sha_url="https://github.com/${REPO}/releases/download/${node_tag}/lotus_${node_tag}_darwin_arm64.tar.gz.sha512"
+node_macos_url="https://github.com/${REPO}/releases/download/${node_tag}/lotus_${node_tag}_darwin_all.tar.gz"
+node_macos_sha_url="https://github.com/${REPO}/releases/download/${node_tag}/lotus_${node_tag}_darwin_all.tar.gz.sha512"
 node_linux_intel_url="https://github.com/${REPO}/releases/download/${node_tag}/lotus_${node_tag}_linux_amd64_v1.tar.gz"
 node_linux_intel_sha_url="https://github.com/${REPO}/releases/download/${node_tag}/lotus_${node_tag}_linux_amd64_v1.tar.gz.sha512"
 
 # Miner URLS
-miner_macos_url="https://github.com/${REPO}/releases/download/${miner_tag}/lotus-miner_v${miner_version}_darwin_arm64.tar.gz"
-miner_macos_sha_url="https://github.com/${REPO}/releases/download/${miner_tag}/lotus-miner_v${miner_version}_darwin_arm64.tar.gz.sha512"
+miner_macos_url="https://github.com/${REPO}/releases/download/${miner_tag}/lotus-miner_v${miner_version}_darwin_all.tar.gz"
+miner_macos_sha_url="https://github.com/${REPO}/releases/download/${miner_tag}/lotus-miner_v${miner_version}_darwin_all.tar.gz.sha512"
 miner_linux_intel_url="https://github.com/${REPO}/releases/download/${miner_tag}/lotus-miner_v${miner_version}_linux_amd64_v1.tar.gz"
 miner_linux_intel_sha_url="https://github.com/${REPO}/releases/download/${miner_tag}/lotus-miner_v${miner_version}_linux_amd64_v1.tar.gz.sha512"
 

@@ -2,15 +2,15 @@
 class LotusMiner < Formula
   desc "A homebrew cask for installing the Lotus miner from filecoin-project/lotus"
   homepage "https://filecoin.io"
-  version "1.38.0"
+  version "1.38.3"
   license "MIT"
 
   depends_on "hwloc"
 
   on_macos do
     on_arm do
-      url "https://github.com/filecoin-project/lotus/releases/download/miner/v1.38.0/lotus-miner_v1.38.0_darwin_arm64.tar.gz"
-      sha256 "ba8c171f3c485b7047af2a270eb47b6654cf6b7f43700f46f5fd6c0f897a3af2"
+      url "https://github.com/filecoin-project/lotus/releases/download/miner/v1.38.3/lotus-miner_v1.38.3_darwin_arm64.tar.gz"
+      sha256 "828ed3982a283dbb0ac2e456807a238908e364c8deb32b6b333a371cdcf76ab5"
 
       def install
         bin.install "lotus-miner"
@@ -22,8 +22,8 @@ class LotusMiner < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/filecoin-project/lotus/releases/download/miner/v1.38.0/lotus-miner_v1.38.0_linux_amd64_v1.tar.gz"
-        sha256 "63e9518596fedc89ef234ff8e8baffc7a391bbf804adb1a513e144103daa58cf"
+        url "https://github.com/filecoin-project/lotus/releases/download/miner/v1.38.3/lotus-miner_v1.38.3_linux_amd64_v1.tar.gz"
+        sha256 "7b90727c9d5329adf26457d86351cb3517da4aad811d0d53fcf2370ad59fbd52"
 
         def install
           bin.install "lotus-miner"
